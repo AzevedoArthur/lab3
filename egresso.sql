@@ -4,8 +4,9 @@
 
 -- DROP TABLE public.cargo;
 
-CREATE TABLE public.cargo (
-	cargo_id int4 NOT NULL,
+
+CREATE TABLE IF NOT EXISTS public.cargo (
+	cargo_id serial4 NOT NULL,
 	nome varchar NOT NULL,
 	descricao varchar NULL,
 	CONSTRAINT cargo_pk PRIMARY KEY (cargo_id)
@@ -18,8 +19,8 @@ CREATE TABLE public.cargo (
 
 -- DROP TABLE public.contato;
 
-CREATE TABLE public.contato (
-	id_contato int4 NOT NULL,
+CREATE TABLE IF NOT EXISTS public.contato (
+	id_contato serial4 NOT NULL,
 	nome varchar NOT NULL,
 	url_logo varchar NULL,
 	CONSTRAINT contato_pk PRIMARY KEY (id_contato)
@@ -32,8 +33,8 @@ CREATE TABLE public.contato (
 
 -- DROP TABLE public.egresso;
 
-CREATE TABLE public.egresso (
-	id_egresso int4 NOT NULL,
+CREATE TABLE IF NOT EXISTS public.egresso (
+	id_egresso serial4 NOT NULL,
 	nome varchar NOT NULL,
 	email varchar NOT NULL,
 	cpf varchar NOT NULL,
@@ -49,8 +50,8 @@ CREATE TABLE public.egresso (
 
 -- DROP TABLE public.curso;
 
-CREATE TABLE public.curso (
-	id_curso int4 NOT NULL,
+CREATE TABLE IF NOT EXISTS public.curso (
+	id_curso serial4 NOT NULL,
 	nome varchar NOT NULL,
 	nivel varchar NOT NULL DEFAULT 'Graduação'::character varying,
 	CONSTRAINT curso_pk PRIMARY KEY (id_curso)
@@ -63,8 +64,8 @@ CREATE TABLE public.curso (
 
 -- DROP TABLE public.faixa_salario;
 
-CREATE TABLE public.faixa_salario (
-	id_faixa_salario int4 NOT NULL,
+CREATE TABLE IF NOT EXISTS public.faixa_salario (
+	id_faixa_salario serial4 NOT NULL,
 	descricao varchar NOT NULL,
 	CONSTRAINT faixa_salario_pk PRIMARY KEY (id_faixa_salario)
 );
@@ -76,7 +77,7 @@ CREATE TABLE public.faixa_salario (
 
 -- DROP TABLE public.contato_egresso;
 
-CREATE TABLE public.contato_egresso (
+CREATE TABLE IF NOT EXISTS public.contato_egresso (
 	egresso_id int4 NOT NULL,
 	contato_id int4 NOT NULL,
 	CONSTRAINT contato_egresso_pk PRIMARY KEY (egresso_id, contato_id),
@@ -91,7 +92,7 @@ CREATE TABLE public.contato_egresso (
 
 -- DROP TABLE public.curso_egresso;
 
-CREATE TABLE public.curso_egresso (
+CREATE TABLE IF NOT EXISTS public.curso_egresso (
 	egresso_id int4 NOT NULL,
 	curso_id int4 NOT NULL,
 	data_inicio date NOT NULL,
@@ -108,8 +109,8 @@ CREATE TABLE public.curso_egresso (
 
 -- DROP TABLE public.depoimento;
 
-CREATE TABLE public.depoimento (
-	id_depoimento int4 NOT NULL,
+CREATE TABLE IF NOT EXISTS public.depoimento (
+	id_depoimento serial4 NOT NULL,
 	egresso_id int4 NOT NULL,
 	texto varchar NOT NULL,
 	"data" date NOT NULL,
@@ -124,8 +125,8 @@ CREATE TABLE public.depoimento (
 
 -- DROP TABLE public.prof_egresso;
 
-CREATE TABLE public.prof_egresso (
-	id_prof_egresso int4 NOT NULL,
+CREATE TABLE IF NOT EXISTS public.prof_egresso (
+	id_prof_egresso serial4 NOT NULL,
 	egresso_id int4 NOT NULL,
 	cargo_id int4 NOT NULL,
 	faixa_salario_id int4 NOT NULL,
