@@ -15,7 +15,7 @@ public class Depoimento {
     @Id
     @Column(name="id_depoimento")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_depoimento;
+    private Long id;
 
     @Column(name="texto")
     private String texto;

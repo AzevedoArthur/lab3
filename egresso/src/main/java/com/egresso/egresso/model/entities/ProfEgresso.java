@@ -15,7 +15,7 @@ public class ProfEgresso {
     @Id
     @Column(name="id_prof_egresso")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_prof_egresso;
+    private Long id;
 
     @Column(name="empresa")
     private String empresa;

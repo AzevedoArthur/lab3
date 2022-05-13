@@ -1,5 +1,7 @@
 package com.egresso.egresso.model.entities;
 
+import java.util.Set;
+
 import javax.persistence.*;
 import lombok.*;
 
@@ -13,7 +15,7 @@ public class Egresso {
     @Id
     @Column(name="id_egresso")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_egresso;
+    private Long id;
 
     @Column(name="nome")
     private String nome;
@@ -29,4 +31,11 @@ public class Egresso {
 
     @Column(name="url_foto")
     private String url_foto;
+
+    @ManyToMany
+    @JoinTable(
+        name="contato_egresso", 
+        joinColumns = @JoinColumn(name="egresso_id"),
+        inverseJoinColumns = @JoinColumn(name="contato_id"))
+    private Set<Contato> contatos;
 }
