@@ -4,6 +4,6 @@ import com.egresso.egresso.model.entities.FaixaSalario;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface FaixaSalarioRepository 
-    extends JpaRepository<FaixaSalario, Long> {
+    extends JpaRepository<FaixaSalario, long> {
     
 }

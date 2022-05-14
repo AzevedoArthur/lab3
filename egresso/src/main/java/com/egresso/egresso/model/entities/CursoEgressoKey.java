@@ -11,8 +11,8 @@ import lombok.*;
 @AllArgsConstructor
 public class CursoEgressoKey implements Serializable {
     @Column(name="egresso_id")
-    private Long egresso_id;
+    private long egresso_id;
 
     @Column(name="curso_id")
-    private Long curso_id;
+    private long curso_id;
 }

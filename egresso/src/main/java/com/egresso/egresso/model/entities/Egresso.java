@@ -15,7 +15,7 @@ public class Egresso {
     @Id
     @Column(name="id_egresso")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
 
     @Column(name="nome")
     private String nome;
@@ -38,4 +38,61 @@ public class Egresso {
         joinColumns = @JoinColumn(name="egresso_id"),
         inverseJoinColumns = @JoinColumn(name="contato_id"))
     private Set<Contato> contatos;
+
+    public long getId() {
+        return this.id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return this.nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getEmail() {
+        return this.email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getCpf() {
+        return this.cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public String getResumo() {
+        return this.resumo;
+    }
+
+    public void setResumo(String resumo) {
+        this.resumo = resumo;
+    }
+
+    public String getUrl_foto() {
+        return this.url_foto;
+    }
+
+    public void setUrl_foto(String url_foto) {
+        this.url_foto = url_foto;
+    }
+
+    public Set<Contato> getContatos() {
+        return this.contatos;
+    }
+
+    public void setContatos(Set<Contato> contatos) {
+        this.contatos = contatos;
+    }
+
 }
