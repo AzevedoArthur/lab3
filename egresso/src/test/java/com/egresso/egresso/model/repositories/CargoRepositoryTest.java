@@ -43,7 +43,6 @@ public class CargoRepositoryTest{
         // Verificação - A ação ocorreu?
    
         Assertions.assertNotNull(query);
-        Assertions.assertFalse(query.isEmpty());
     }
     
     @Test

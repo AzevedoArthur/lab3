@@ -1,8 +1,5 @@
 package com.egresso.egresso.model.repositories;
 
-import com.egresso.egresso.model.entities.ProfEgresso; // Interface
-
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
