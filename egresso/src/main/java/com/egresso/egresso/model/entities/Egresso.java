@@ -39,60 +39,60 @@ public class Egresso {
         inverseJoinColumns = @JoinColumn(name="contato_id"))
     private Set<Contato> contatos;
 
-    public long getId() {
-        return this.id;
-    }
+    // public long getId() {
+    //     return this.id;
+    // }
 
-    public void setId(long id) {
-        this.id = id;
-    }
+    // public void setId(long id) {
+    //     this.id = id;
+    // }
 
-    public String getNome() {
-        return this.nome;
-    }
+    // public String getNome() {
+    //     return this.nome;
+    // }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+    // public void setNome(String nome) {
+    //     this.nome = nome;
+    // }
 
-    public String getEmail() {
-        return this.email;
-    }
+    // public String getEmail() {
+    //     return this.email;
+    // }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+    // public void setEmail(String email) {
+    //     this.email = email;
+    // }
 
-    public String getCpf() {
-        return this.cpf;
-    }
+    // public String getCpf() {
+    //     return this.cpf;
+    // }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
+    // public void setCpf(String cpf) {
+    //     this.cpf = cpf;
+    // }
 
-    public String getResumo() {
-        return this.resumo;
-    }
+    // public String getResumo() {
+    //     return this.resumo;
+    // }
 
-    public void setResumo(String resumo) {
-        this.resumo = resumo;
-    }
+    // public void setResumo(String resumo) {
+    //     this.resumo = resumo;
+    // }
 
-    public String getUrl_foto() {
-        return this.url_foto;
-    }
+    // public String getUrl_foto() {
+    //     return this.url_foto;
+    // }
 
-    public void setUrl_foto(String url_foto) {
-        this.url_foto = url_foto;
-    }
+    // public void setUrl_foto(String url_foto) {
+    //     this.url_foto = url_foto;
+    // }
 
-    public Set<Contato> getContatos() {
-        return this.contatos;
-    }
+    // public Set<Contato> getContatos() {
+    //     return this.contatos;
+    // }
 
-    public void setContatos(Set<Contato> contatos) {
-        this.contatos = contatos;
-    }
+    // public void setContatos(Set<Contato> contatos) {
+    //     this.contatos = contatos;
+    // }
 
 }

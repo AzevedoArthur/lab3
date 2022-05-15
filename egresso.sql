@@ -6,7 +6,7 @@
 
 
 CREATE TABLE IF NOT EXISTS public.cargo (
-	cargo_id serial4 NOT NULL,
+	id_cargo serial4 NOT NULL,
 	nome varchar NOT NULL,
 	descricao varchar NULL,
 	CONSTRAINT cargo_pk PRIMARY KEY (cargo_id)

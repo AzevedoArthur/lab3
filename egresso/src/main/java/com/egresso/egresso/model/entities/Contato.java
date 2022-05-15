@@ -27,36 +27,36 @@ public class Contato {
     private Set<Egresso> egressos;
 
 
-    public long getId() {
-        return this.id;
-    }
+    // public long getId() {
+    //     return this.id;
+    // }
 
-    public void setId(long id) {
-        this.id = id;
-    }
+    // public void setId(long id) {
+    //     this.id = id;
+    // }
 
-    public String getNome() {
-        return this.nome;
-    }
+    // public String getNome() {
+    //     return this.nome;
+    // }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+    // public void setNome(String nome) {
+    //     this.nome = nome;
+    // }
 
-    public String getUrl_logo() {
-        return this.url_logo;
-    }
+    // public String getUrl_logo() {
+    //     return this.url_logo;
+    // }
 
-    public void setUrl_logo(String url_logo) {
-        this.url_logo = url_logo;
-    }
+    // public void setUrl_logo(String url_logo) {
+    //     this.url_logo = url_logo;
+    // }
 
-    public Set<Egresso> getEgressos() {
-        return this.egressos;
-    }
+    // public Set<Egresso> getEgressos() {
+    //     return this.egressos;
+    // }
 
-    public void setEgressos(Set<Egresso> egressos) {
-        this.egressos = egressos;
-    }
+    // public void setEgressos(Set<Egresso> egressos) {
+    //     this.egressos = egressos;
+    // }
 
 }

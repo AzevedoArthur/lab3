@@ -28,36 +28,36 @@ public class Depoimento {
     private Egresso egresso;
 
 
-    public long getId() {
-        return this.id;
-    }
+    // public long getId() {
+    //     return this.id;
+    // }
 
-    public void setId(long id) {
-        this.id = id;
-    }
+    // public void setId(long id) {
+    //     this.id = id;
+    // }
 
-    public String getTexto() {
-        return this.texto;
-    }
+    // public String getTexto() {
+    //     return this.texto;
+    // }
 
-    public void setTexto(String texto) {
-        this.texto = texto;
-    }
+    // public void setTexto(String texto) {
+    //     this.texto = texto;
+    // }
 
-    public Date getData() {
-        return this.data;
-    }
+    // public Date getData() {
+    //     return this.data;
+    // }
 
-    public void setData(Date data) {
-        this.data = data;
-    }
+    // public void setData(Date data) {
+    //     this.data = data;
+    // }
 
-    public Egresso getEgresso() {
-        return this.egresso;
-    }
+    // public Egresso getEgresso() {
+    //     return this.egresso;
+    // }
 
-    public void setEgresso(Egresso egresso) {
-        this.egresso = egresso;
-    }
+    // public void setEgresso(Egresso egresso) {
+    //     this.egresso = egresso;
+    // }
 
 }

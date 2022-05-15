@@ -22,28 +22,28 @@ public class Curso {
     private String nivel;
 
 
-    public long getId() {
-        return this.id;
-    }
+    // public long getId() {
+    //     return this.id;
+    // }
 
-    public void setId(long id) {
-        this.id = id;
-    }
+    // public void setId(long id) {
+    //     this.id = id;
+    // }
 
-    public String getNome() {
-        return this.nome;
-    }
+    // public String getNome() {
+    //     return this.nome;
+    // }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+    // public void setNome(String nome) {
+    //     this.nome = nome;
+    // }
 
-    public String getNivel() {
-        return this.nivel;
-    }
+    // public String getNivel() {
+    //     return this.nivel;
+    // }
 
-    public void setNivel(String nivel) {
-        this.nivel = nivel;
-    }
+    // public void setNivel(String nivel) {
+    //     this.nivel = nivel;
+    // }
 
 }
