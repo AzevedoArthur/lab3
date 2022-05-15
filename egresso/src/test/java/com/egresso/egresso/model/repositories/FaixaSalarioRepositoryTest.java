@@ -1,14 +1,19 @@
 package com.egresso.egresso.model.repositories;
 
+import com.egresso.egresso.model.entities.FaixaSalario; // Interface
+
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import com.egresso.egresso.model.repositories.FaixaSalarioRepository; // Interface
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
 public class FaixaSalarioRepositoryTest {
     @Autowired
-    FaixaSalario repository;
+    FaixaSalarioRepository repository;
     
     @Test
     public void deveSalvarFaixaSalario(){

@@ -4,6 +4,6 @@ import com.egresso.egresso.model.entities.Contato;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ContatoRepository 
-    extends JpaRepository<Contato, long> {
+    extends JpaRepository<Contato, Long> {
     
 }

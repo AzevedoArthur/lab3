@@ -4,6 +4,6 @@ import com.egresso.egresso.model.entities.Cargo;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface CargoRepository 
-    extends JpaRepository<Cargo, long> {
+    extends JpaRepository<Cargo, Long> {
     
 }

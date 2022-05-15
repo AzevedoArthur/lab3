@@ -1,14 +1,19 @@
 package com.egresso.egresso.model.repositories;
 
+import com.egresso.egresso.model.entities.Egresso; // Interface
+
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import com.egresso.egresso.model.repositories.EgressoRepository; // Interface
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
 public class EgressoRepositoryTest {
     @Autowired
-    Egresso repository;
+    EgressoRepository repository;
     
     @Test
     public void deveSalvarEgresso(){
