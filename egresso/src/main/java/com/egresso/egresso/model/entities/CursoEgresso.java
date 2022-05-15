@@ -1,5 +1,7 @@
 package com.egresso.egresso.model.entities;
 
+import java.sql.Date;
+
 import javax.persistence.*;
 import lombok.*;
 
@@ -22,4 +24,10 @@ public class CursoEgresso {
     @MapsId("egresso_id")
     @JoinColumn(name="egresso_id")
     private Egresso egresso;
+
+    @Column(name="data_inicio")
+    private Date data_inicio;
+
+    @Column(name="data_conclusao")
+    private Date data_conclusao;
 }
