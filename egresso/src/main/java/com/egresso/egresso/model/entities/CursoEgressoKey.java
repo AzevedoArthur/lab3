@@ -7,6 +7,7 @@ import lombok.*;
 
 @Embeddable
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class CursoEgressoKey implements Serializable {
