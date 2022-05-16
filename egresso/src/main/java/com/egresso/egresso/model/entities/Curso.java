@@ -13,7 +13,7 @@ public class Curso {
     @Id
     @Column(name="id_curso")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Column(name="nome")
     private String nome;
@@ -22,11 +22,11 @@ public class Curso {
     private String nivel;
 
 
-    // public long getId() {
+    // public Long getId() {
     //     return this.id;
     // }
 
-    // public void setId(long id) {
+    // public void setId(Long id) {
     //     this.id = id;
     // }
 

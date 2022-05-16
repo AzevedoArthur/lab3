@@ -15,7 +15,7 @@ public class ProfEgresso {
     @Id
     @Column(name="id_prof_egresso")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Column(name="empresa")
     private String empresa;
@@ -39,11 +39,11 @@ public class ProfEgresso {
     private FaixaSalario faixa_salario;
 
 
-    // public long getId() {
+    // public Long getId() {
     //     return this.id;
     // }
 
-    // public void setId(long id) {
+    // public void setId(Long id) {
     //     this.id = id;
     // }
 

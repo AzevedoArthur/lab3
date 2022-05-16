@@ -15,7 +15,7 @@ public class Depoimento {
     @Id
     @Column(name="id_depoimento")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Column(name="texto")
     private String texto;
@@ -28,11 +28,11 @@ public class Depoimento {
     private Egresso egresso;
 
 
-    // public long getId() {
+    // public Long getId() {
     //     return this.id;
     // }
 
-    // public void setId(long id) {
+    // public void setId(Long id) {
     //     this.id = id;
     // }
 

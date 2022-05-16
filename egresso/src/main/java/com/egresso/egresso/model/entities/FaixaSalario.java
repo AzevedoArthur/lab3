@@ -13,17 +13,17 @@ public class FaixaSalario {
     @Id
     @Column(name="id_faixa_salario")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Column(name="descricao")
     private String descricao;
 
 
-    // public long getId() {
+    // public Long getId() {
     //     return this.id;
     // }
 
-    // public void setId(long id) {
+    // public void setId(Long id) {
     //     this.id = id;
     // }
 

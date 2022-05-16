@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Optional;
 
 import com.egresso.egresso.model.entities.CursoEgresso; // Interface
-import com.egresso.egresso.model.entities.CursoEgressoKey;
 import com.egresso.egresso.model.entities.Curso; // Interface
 import com.egresso.egresso.model.entities.Egresso; // Interface
 
@@ -45,7 +44,6 @@ public class CursoEgressoRepositoryTest{
 
         CursoEgresso curso_egresso_a_salvar = CursoEgresso.builder().curso(curso_salvo)
                                                                     .egresso(egresso_salvo)
-                                                                    .id(CursoEgressoKey.builder().curso_id(curso_salvo.getId()).egresso_id(egresso_salvo.getId()).build())
                                                                     .data_inicio(Date.valueOf(LocalDate.now().plusDays(-1)))
                                                                     .data_conclusao(Date.valueOf(LocalDate.now())).build();
 
@@ -89,7 +87,6 @@ public class CursoEgressoRepositoryTest{
 
         CursoEgresso curso_egresso_a_salvar = CursoEgresso.builder().curso(curso_salvo)
                                                                     .egresso(egresso_salvo)
-                                                                    .id(CursoEgressoKey.builder().curso_id(curso_salvo.getId()).egresso_id(egresso_salvo.getId()).build())
                                                                     .data_inicio(Date.valueOf(LocalDate.now().plusDays(-1)))
                                                                     .data_conclusao(Date.valueOf(LocalDate.now())).build();
 
@@ -131,7 +128,6 @@ public class CursoEgressoRepositoryTest{
 
         CursoEgresso curso_egresso_a_salvar = CursoEgresso.builder().curso(curso_salvo)
                                                                     .egresso(egresso_salvo)
-                                                                    .id(CursoEgressoKey.builder().curso_id(curso_salvo.getId()).egresso_id(egresso_salvo.getId()).build())
                                                                     .data_inicio(Date.valueOf(LocalDate.now().plusDays(-1)))
                                                                     .data_conclusao(Date.valueOf(LocalDate.now())).build();
 

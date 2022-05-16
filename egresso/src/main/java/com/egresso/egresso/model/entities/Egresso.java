@@ -15,7 +15,7 @@ public class Egresso {
     @Id
     @Column(name="id_egresso")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Column(name="nome")
     private String nome;
@@ -39,11 +39,11 @@ public class Egresso {
         inverseJoinColumns = @JoinColumn(name="contato_id"))
     private Set<Contato> contatos;
 
-    // public long getId() {
+    // public Long getId() {
     //     return this.id;
     // }
 
-    // public void setId(long id) {
+    // public void setId(Long id) {
     //     this.id = id;
     // }
 
