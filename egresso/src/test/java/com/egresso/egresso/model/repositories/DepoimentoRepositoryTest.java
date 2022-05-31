@@ -5,6 +5,8 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
+import javax.transaction.Transactional;
+
 import com.egresso.egresso.model.entities.Depoimento; // Interface
 import com.egresso.egresso.model.entities.Egresso;
 
@@ -19,6 +21,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
 @ActiveProfiles("test")
+@Transactional
 public class DepoimentoRepositoryTest{
     @Autowired
     DepoimentoRepository repository;

@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
+import javax.transaction.Transactional;
+
 import com.egresso.egresso.model.entities.Contato; // Interface
 import com.egresso.egresso.model.entities.Egresso; // Interface
 
@@ -18,6 +20,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
 @ActiveProfiles("test")
+@Transactional
 public class ContatoRepositoryTest{
     @Autowired
     ContatoRepository repository;

@@ -3,6 +3,8 @@ package com.egresso.egresso.model.repositories;
 import java.util.List;
 import java.util.Optional;
 
+import javax.transaction.Transactional;
+
 import com.egresso.egresso.model.entities.Cargo; // Interface
 
 import org.junit.jupiter.api.Assertions;
@@ -16,6 +18,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
 @ActiveProfiles("test")
+@Transactional
 public class CargoRepositoryTest{
     @Autowired
     CargoRepository repository;
