@@ -3,6 +3,8 @@ package com.egresso.egresso.model.entities;
 import java.util.Set;
 
 import javax.persistence.*;
+
+
 import lombok.*;
 
 @Entity
@@ -15,7 +17,7 @@ public class Egresso {
     @Id
     @Column(name="id_egresso")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Column(name="nome")
     private String nome;
@@ -39,60 +41,37 @@ public class Egresso {
         inverseJoinColumns = @JoinColumn(name="contato_id"))
     private Set<Contato> contatos;
 
-    // public long getId() {
-    //     return this.id;
+    @OneToMany(mappedBy = "egresso",
+                cascade = CascadeType.ALL,
+                orphanRemoval = true)
+    @EqualsAndHashCode.Exclude
+    private Set<Depoimento> depoimentos;
+    // public void setDepoimentos(Set<Depoimento> novosDepoimentos) {
+    //     for (Depoimento d : novosDepoimentos){
+    //         d.setEgresso(this);
+    //     }
     // }
-
-    // public void setId(long id) {
-    //     this.id = id;
+    
+    @OneToMany(mappedBy = "egresso",
+                cascade = CascadeType.ALL,
+                orphanRemoval = true)
+    @EqualsAndHashCode.Exclude
+    private Set<CursoEgresso> cursos;
+    // public void setCursos(Set<CursoEgresso> novosCursos) {
+    //     for (CursoEgresso c : novosCursos){
+    //         c.setEgresso(this);
+    //     }
     // }
-
-    // public String getNome() {
-    //     return this.nome;
-    // }
-
-    // public void setNome(String nome) {
-    //     this.nome = nome;
-    // }
-
-    // public String getEmail() {
-    //     return this.email;
-    // }
-
-    // public void setEmail(String email) {
-    //     this.email = email;
-    // }
-
-    // public String getCpf() {
-    //     return this.cpf;
-    // }
-
-    // public void setCpf(String cpf) {
-    //     this.cpf = cpf;
-    // }
-
-    // public String getResumo() {
-    //     return this.resumo;
-    // }
-
-    // public void setResumo(String resumo) {
-    //     this.resumo = resumo;
-    // }
-
-    // public String getUrl_foto() {
-    //     return this.url_foto;
-    // }
-
-    // public void setUrl_foto(String url_foto) {
-    //     this.url_foto = url_foto;
-    // }
-
-    // public Set<Contato> getContatos() {
-    //     return this.contatos;
-    // }
-
-    // public void setContatos(Set<Contato> contatos) {
-    //     this.contatos = contatos;
+    
+    @OneToMany(mappedBy = "egresso",
+                cascade = CascadeType.ALL,
+                orphanRemoval = true)
+    @EqualsAndHashCode.Exclude
+    private Set<ProfEgresso> profissoes;
+    // public void setProfissoess(Set<ProfEgresso> novosProfissoess) {
+    //     for (ProfEgresso p : novosProfissoess){
+    //         p.setEgresso(this);
+    //     }
     // }
 
 }

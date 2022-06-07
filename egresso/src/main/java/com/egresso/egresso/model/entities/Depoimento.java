@@ -15,7 +15,7 @@ public class Depoimento {
     @Id
     @Column(name="id_depoimento")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Column(name="texto")
     private String texto;
@@ -23,41 +23,7 @@ public class Depoimento {
     @Column(name="data")
     private Date data;
     
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="egresso_id")
     private Egresso egresso;
-
-
-    // public long getId() {
-    //     return this.id;
-    // }
-
-    // public void setId(long id) {
-    //     this.id = id;
-    // }
-
-    // public String getTexto() {
-    //     return this.texto;
-    // }
-
-    // public void setTexto(String texto) {
-    //     this.texto = texto;
-    // }
-
-    // public Date getData() {
-    //     return this.data;
-    // }
-
-    // public void setData(Date data) {
-    //     this.data = data;
-    // }
-
-    // public Egresso getEgresso() {
-    //     return this.egresso;
-    // }
-
-    // public void setEgresso(Egresso egresso) {
-    //     this.egresso = egresso;
-    // }
-
 }
