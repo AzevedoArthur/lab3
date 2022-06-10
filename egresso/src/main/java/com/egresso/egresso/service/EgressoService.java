@@ -16,7 +16,6 @@ import com.egresso.egresso.model.entities.Curso;
 import com.egresso.egresso.model.entities.CursoEgresso;
 import com.egresso.egresso.model.entities.Depoimento;
 import com.egresso.egresso.model.repositories.CargoRepository;
-import com.egresso.egresso.model.repositories.ContatoRepository;
 import com.egresso.egresso.model.repositories.CursoRepository;
 import com.egresso.egresso.model.repositories.EgressoRepository;
 import com.egresso.egresso.model.repositories.FaixaSalarioRepository;
@@ -29,8 +28,6 @@ import org.springframework.stereotype.Service;
 public class EgressoService {
     @Autowired
     private EgressoRepository egressoRepository;
-    @Autowired
-    private ContatoRepository contatoRepository;
     @Autowired
     private CargoRepository cargoRepository;
     @Autowired
@@ -153,7 +150,7 @@ public class EgressoService {
             throw new RegraNegocioRuntime(errorMessages.get(12));
         }
 
-        // Não é necessário checar Resumo, URL foto
+        // Não é necessário checar Resumo ou URL foto
 
         // Check Contatos
         if (egresso.getContatos() != null) {
@@ -168,7 +165,6 @@ public class EgressoService {
                 }
                 // else
                     // O egresso da ligação é igual ao egresso a ser salvo. Ideal.
-                if (contato.getId() == null) contatoRepository.save(contato);
             }
         }
 
