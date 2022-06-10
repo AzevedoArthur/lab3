@@ -13,7 +13,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 @SpringBootTest
 @ActiveProfiles("test")
 @Transactional
-public class CargoServiceTests {
+public class CargoServiceTest {
     @Autowired
     CargoService service;
     

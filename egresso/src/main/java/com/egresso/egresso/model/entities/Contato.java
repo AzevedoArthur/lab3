@@ -24,6 +24,7 @@ public class Contato {
     private String url_logo;
 
     @ManyToMany(mappedBy = "contatos")
+    @EqualsAndHashCode.Exclude
     private Set<Egresso> egressos;
 
 }

@@ -85,7 +85,7 @@ public class EgressoRepositoryTest{
                                                     .build();
 
         Curso curso_a_salvar = Curso.builder().nome("Curso Egressado")
-                                                    .nivel("Grad").build();
+                                                .nivel("Grad").build();
 
         CursoEgresso curso_egresso_a_salvar = CursoEgresso.builder().curso(curso_a_salvar)
                                                                     .egresso(egresso_a_salvar)

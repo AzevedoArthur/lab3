@@ -34,11 +34,12 @@ public class Egresso {
     @Column(name="url_foto")
     private String url_foto;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
         name="contato_egresso", 
         joinColumns = @JoinColumn(name="egresso_id"),
         inverseJoinColumns = @JoinColumn(name="contato_id"))
+    @EqualsAndHashCode.Exclude
     private Set<Contato> contatos;
 
     @OneToMany(mappedBy = "egresso",
