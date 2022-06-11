@@ -25,6 +25,7 @@ public class Contato {
 
     @ManyToMany(mappedBy = "contatos")
     @EqualsAndHashCode.Exclude
+    @ToString.Exclude
     private Set<Egresso> egressos;
 
 }

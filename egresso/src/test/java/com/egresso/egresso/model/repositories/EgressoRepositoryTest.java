@@ -104,7 +104,7 @@ public class EgressoRepositoryTest{
                                                                 .data_registro(Date.valueOf(LocalDate.now()))
                                                                 .egresso(egresso_a_salvar)
                                                                 .cargo(cargo_a_salvar)
-                                                                .faixa_salario(faixaSalario_a_salvar).build();
+                                                                .faixaSalario(faixaSalario_a_salvar).build();
 
         egresso_a_salvar.setProfissoes(Set.of(prof_egresso_a_salvar));
 

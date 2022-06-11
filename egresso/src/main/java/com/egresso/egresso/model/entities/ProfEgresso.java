@@ -36,6 +36,6 @@ public class ProfEgresso {
     
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="faixa_salario_id")
-    private FaixaSalario faixa_salario;
+    private FaixaSalario faixaSalario;
 
 }

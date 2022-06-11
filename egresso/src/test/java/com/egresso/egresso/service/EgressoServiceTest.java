@@ -106,7 +106,7 @@ public class EgressoServiceTest {
                                                                 .data_registro(Date.valueOf(LocalDate.now()))
                                                                 .egresso(egresso_a_salvar)
                                                                 .cargo(cargo_a_salvar)
-                                                                .faixa_salario(faixaSalario_a_salvar).build();
+                                                                .faixaSalario(faixaSalario_a_salvar).build();
 
         egresso_a_salvar.setProfissoes(new HashSet<>(Set.of(prof_egresso_a_salvar)));
 
@@ -188,7 +188,7 @@ public class EgressoServiceTest {
                                                                 .data_registro(Date.valueOf(LocalDate.now()))
                                                                 .egresso(salvo)
                                                                 .cargo(cargo_a_salvar)
-                                                                .faixa_salario(faixaSalario_a_salvar).build();
+                                                                .faixaSalario(faixaSalario_a_salvar).build();
         HashSet<ProfEgresso> profissoes = new HashSet<>(salvo.getProfissoes());
         profissoes.add(prof_egresso_a_salvar);
         salvo.setProfissoes(profissoes);
@@ -560,7 +560,7 @@ public class EgressoServiceTest {
                                                                 .data_registro(Date.valueOf(LocalDate.now()))
                                                                 .egresso(egresso_dummy)
                                                                 .cargo(egresso_a_salvar.getProfissoes().iterator().next().getCargo())
-                                                                .faixa_salario(egresso_a_salvar.getProfissoes().iterator().next().getFaixa_salario()).build();
+                                                                .faixaSalario(egresso_a_salvar.getProfissoes().iterator().next().getFaixaSalario()).build();
 
         egresso_a_salvar.setProfissoes(Set.of(prof_egresso_a_salvar));
         
@@ -601,7 +601,7 @@ public class EgressoServiceTest {
                                                                 .data_registro(Date.valueOf(LocalDate.now()))
                                                                 .egresso(egresso_a_salvar)
                                                                 .cargo(cargo_a_salvar)
-                                                                .faixa_salario(faixaSalario_a_salvar).build();
+                                                                .faixaSalario(faixaSalario_a_salvar).build();
 
         egresso_a_salvar.setProfissoes(Set.of(prof_egresso_a_salvar));
 
@@ -662,7 +662,7 @@ public class EgressoServiceTest {
                                                                 .data_registro(Date.valueOf(LocalDate.now()))
                                                                 .egresso(egresso_a_salvar)
                                                                 .cargo(cargo_a_salvar)
-                                                                .faixa_salario(faixaSalario_a_salvar).build();
+                                                                .faixaSalario(faixaSalario_a_salvar).build();
 
         egresso_a_salvar.setProfissoes(Set.of(prof_egresso_a_salvar));
 
@@ -724,7 +724,7 @@ public class EgressoServiceTest {
                                                                 .data_registro(Date.valueOf(LocalDate.now()))
                                                                 .egresso(egresso_a_salvar)
                                                                 .cargo(cargo_a_salvar)
-                                                                .faixa_salario(faixaSalario_a_salvar).build();
+                                                                .faixaSalario(faixaSalario_a_salvar).build();
 
         egresso_a_salvar.setProfissoes(Set.of(prof_egresso_a_salvar));
 
@@ -781,7 +781,7 @@ public class EgressoServiceTest {
                                                                 .descricao("Exemplo")
                                                                 .data_registro(Date.valueOf(LocalDate.now()))
                                                                 .egresso(egresso_a_salvar)
-                                                                .faixa_salario(faixaSalario_a_salvar).build();
+                                                                .faixaSalario(faixaSalario_a_salvar).build();
 
         egresso_a_salvar.setProfissoes(Set.of(prof_egresso_a_salvar));
 
@@ -842,7 +842,7 @@ public class EgressoServiceTest {
                                                                 .data_registro(Date.valueOf(LocalDate.now()))
                                                                 .egresso(egresso_a_salvar)
                                                                 .cargo(cargo_a_salvar)
-                                                                .faixa_salario(faixaSalario_a_salvar).build();
+                                                                .faixaSalario(faixaSalario_a_salvar).build();
 
         egresso_a_salvar.setProfissoes(Set.of(prof_egresso_a_salvar));
 
@@ -903,7 +903,7 @@ public class EgressoServiceTest {
                                                                 .data_registro(Date.valueOf(LocalDate.now()))
                                                                 .egresso(egresso_a_salvar)
                                                                 .cargo(cargo_a_salvar)
-                                                                .faixa_salario(faixaSalario_a_salvar).build();
+                                                                .faixaSalario(faixaSalario_a_salvar).build();
 
         egresso_a_salvar.setProfissoes(Set.of(prof_egresso_a_salvar));
 
@@ -1022,7 +1022,7 @@ public class EgressoServiceTest {
                                                                 .data_registro(Date.valueOf(LocalDate.now()))
                                                                 .egresso(egresso_a_salvar)
                                                                 .cargo(cargo_a_salvar)
-                                                                .faixa_salario(faixaSalario_a_salvar).build();
+                                                                .faixaSalario(faixaSalario_a_salvar).build();
 
         egresso_a_salvar.setProfissoes(Set.of(prof_egresso_a_salvar));
 
@@ -1083,7 +1083,7 @@ public class EgressoServiceTest {
                                                                 .data_registro(Date.valueOf(LocalDate.now()))
                                                                 .egresso(egresso_a_salvar)
                                                                 .cargo(cargo_a_salvar)
-                                                                .faixa_salario(faixaSalario_a_salvar).build();
+                                                                .faixaSalario(faixaSalario_a_salvar).build();
 
         egresso_a_salvar.setProfissoes(Set.of(prof_egresso_a_salvar));
 

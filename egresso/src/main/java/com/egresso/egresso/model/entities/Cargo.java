@@ -27,5 +27,6 @@ public class Cargo {
                 cascade = CascadeType.ALL,
                 orphanRemoval = true)
     @EqualsAndHashCode.Exclude
+    @ToString.Exclude
     private Set<ProfEgresso> ocupantes;
 }

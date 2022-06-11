@@ -20,10 +20,11 @@ public class FaixaSalario {
     @Column(name="descricao")
     private String descricao;
     
-    @OneToMany(mappedBy = "faixa_salario",
+    @OneToMany(mappedBy = "faixaSalario",
                 cascade = CascadeType.ALL,
                 orphanRemoval = true)
     @EqualsAndHashCode.Exclude
+    @ToString.Exclude
     private Set<ProfEgresso> profEgressos;
     
 }

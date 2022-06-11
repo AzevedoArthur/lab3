@@ -28,5 +28,6 @@ public class Curso {
                 cascade = CascadeType.ALL,
                 orphanRemoval = true)
     @EqualsAndHashCode.Exclude
+    @ToString.Exclude
     private Set<CursoEgresso> cursantes;
 }

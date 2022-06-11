@@ -40,12 +40,14 @@ public class Egresso {
         joinColumns = @JoinColumn(name="egresso_id"),
         inverseJoinColumns = @JoinColumn(name="contato_id"))
     @EqualsAndHashCode.Exclude
+    @ToString.Exclude
     private Set<Contato> contatos;
 
     @OneToMany(mappedBy = "egresso",
                 cascade = CascadeType.ALL,
                 orphanRemoval = true)
     @EqualsAndHashCode.Exclude
+    @ToString.Exclude
     private Set<Depoimento> depoimentos;
     // public void setDepoimentos(Set<Depoimento> novosDepoimentos) {
     //     for (Depoimento d : novosDepoimentos){
@@ -57,6 +59,7 @@ public class Egresso {
                 cascade = CascadeType.ALL,
                 orphanRemoval = true)
     @EqualsAndHashCode.Exclude
+    @ToString.Exclude
     private Set<CursoEgresso> cursos;
     // public void setCursos(Set<CursoEgresso> novosCursos) {
     //     for (CursoEgresso c : novosCursos){
@@ -68,6 +71,7 @@ public class Egresso {
                 cascade = CascadeType.ALL,
                 orphanRemoval = true)
     @EqualsAndHashCode.Exclude
+    @ToString.Exclude
     private Set<ProfEgresso> profissoes;
     // public void setProfissoess(Set<ProfEgresso> novosProfissoess) {
     //     for (ProfEgresso p : novosProfissoess){

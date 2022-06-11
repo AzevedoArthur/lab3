@@ -210,7 +210,7 @@ public class EgressoService {
                 Cargo cargo = profissao.getCargo();
                 if (cargo == null || cargo.getId() == null || !cargoRepository.existsById(cargo.getId()))
                     throw new RegraNegocioRuntime(errorMessages.get(14));
-                FaixaSalario faixaSalario = profissao.getFaixa_salario();
+                FaixaSalario faixaSalario = profissao.getFaixaSalario();
                 if (faixaSalario == null || faixaSalario.getId() == null || !faixaSalarioRepository.existsById(faixaSalario.getId()))
                     throw new RegraNegocioRuntime(errorMessages.get(15));
             }
