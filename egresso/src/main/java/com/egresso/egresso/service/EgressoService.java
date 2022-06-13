@@ -88,17 +88,9 @@ public class EgressoService {
         "O egresso a ser salvo possui depoimento de outro egresso."
     );
     
-    private void verificarEgressoNovo(Egresso egresso) {
+    private void verificarEgressoNovoCampos(Egresso egresso) {
         // Check Egresso
         if (egresso == null) throw new RegraNegocioRuntime(errorMessages.get(0));
-        
-        // Check ID
-        if (egresso.getId() != null) {
-            if (egressoRepository.existsById(egresso.getId()))
-                throw new RegraNegocioRuntime(errorMessages.get(1));
-            else 
-                throw new RegraNegocioRuntime(errorMessages.get(2));
-        }
         
         // Não é necessário checar nome
 
@@ -216,6 +208,14 @@ public class EgressoService {
             }
         }
     }
+    private void verificarEgressoNaoExistePorID(Long id) {
+        if (id != null) {
+            if (egressoRepository.existsById(id))
+                throw new RegraNegocioRuntime(errorMessages.get(1));
+            else 
+                throw new RegraNegocioRuntime(errorMessages.get(2));
+        }
+    }
     private void verificarEgressoExistePorID(Long id) {
         if (id == null) {
             throw new RegraNegocioRuntime(errorMessages.get(16));
@@ -226,14 +226,17 @@ public class EgressoService {
     
     private Egresso salvar(Egresso egresso) {
         verificarEgressoValido(egresso);
+        verificarEgressoNovoCampos(egresso);
         return egressoRepository.save(egresso);
     }
 
     public Egresso inserir(Egresso egresso) {
-        verificarEgressoNovo(egresso);
+        if (egresso == null) throw new RegraNegocioRuntime(errorMessages.get(0));
+        verificarEgressoNaoExistePorID(egresso.getId());
         return salvar(egresso);
     }
     public Egresso editar(Egresso egresso) {
+        if (egresso == null) throw new RegraNegocioRuntime(errorMessages.get(0));
         verificarEgressoExistePorID(egresso.getId());
         return salvar(egresso);
     }
