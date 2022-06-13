@@ -23,7 +23,7 @@ public class Depoimento {
     @Column(name="data")
     private Date data;
     
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name="egresso_id")
     private Egresso egresso;
 }

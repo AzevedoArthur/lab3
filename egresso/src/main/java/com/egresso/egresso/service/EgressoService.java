@@ -216,7 +216,6 @@ public class EgressoService {
             }
         }
     }
-    
     private void verificarEgressoExistePorID(Long id) {
         if (id == null) {
             throw new RegraNegocioRuntime(errorMessages.get(16));
@@ -224,6 +223,7 @@ public class EgressoService {
             throw new RegraNegocioRuntime(errorMessages.get(17));
         }
     }
+    
     private Egresso salvar(Egresso egresso) {
         verificarEgressoValido(egresso);
         return egressoRepository.save(egresso);
