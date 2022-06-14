@@ -70,7 +70,7 @@ public class DepoimentoService {
         // Check Texto
         if (depoimento.getTexto() == null)
             throw new RegraNegocioRuntime(errorMessages.get(3));
-        else if (depoimento.getTexto().isEmpty())
+        else if (depoimento.getTexto().strip().isEmpty())
             throw new RegraNegocioRuntime(errorMessages.get(4));
         //else
         //  texto correto
@@ -85,13 +85,10 @@ public class DepoimentoService {
         //else
         //  data correta
     }
-    private void verificarDepoimentoNovo(Depoimento depoimento) {
-        // Check Depoimento
-        if (depoimento == null) throw new RegraNegocioRuntime(errorMessages.get(0));
-
+    private void verificarDepoimentoNaoExistePorID(Long id) {
         // Check ID
-        if (depoimento.getId() != null) {
-            if (depoimentoRepository.existsById(depoimento.getId()))
+        if (id != null) {
+            if (depoimentoRepository.existsById(id))
                 throw new RegraNegocioRuntime(errorMessages.get(8));
             else
                 throw new RegraNegocioRuntime(errorMessages.get(9));
@@ -110,10 +107,12 @@ public class DepoimentoService {
         return depoimentoRepository.save(depoimento); 
     }
     public Depoimento inserir(Depoimento depoimento) {
-        verificarDepoimentoNovo(depoimento);
+        if (depoimento == null) throw new RegraNegocioRuntime(errorMessages.get(0));
+        verificarDepoimentoNaoExistePorID(depoimento.getId());
         return salvar(depoimento); 
     }
     public Depoimento editar(Depoimento depoimento) {
+        if (depoimento == null) throw new RegraNegocioRuntime(errorMessages.get(0));
         verificarDepoimentoExistePorID(depoimento.getId());
         return salvar(depoimento); 
     }
@@ -122,6 +121,7 @@ public class DepoimentoService {
         depoimentoRepository.deleteById(id);
     }
     public void deletar(Depoimento depoimento) {
+        if (depoimento == null) throw new RegraNegocioRuntime(errorMessages.get(0));
         verificarDepoimentoExistePorID(depoimento.getId());
         depoimentoRepository.delete(depoimento);
     }
