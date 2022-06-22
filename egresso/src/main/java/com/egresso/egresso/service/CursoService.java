@@ -41,27 +41,27 @@ public class CursoService {
         // ERR-MSG-06
         "O ID do curso informada é nulo.",
         // ERR-MSG-07
-        "Não foi encontrado curso com o ID informado."//,
+        "Não foi encontrado curso com o ID informado.",
         // ERR-MSG-08
-        //"O egresso informado é nulo.",
+        "O egresso informado é nulo.",
         // ERR-MSG-09
-        //"egresso.getId() == null",
+        "O egresso informado não tem ID.",
         // ERR-MSG-10
-        //"Não foi encontrado egresso com o ID informado."
+        "Não foi encontrado egresso com o ID informado."
     );
     
 
-    private void verificarCursoValido(Curso curso) {
-        // Check Curso
-        if (curso == null) throw new RegraNegocioRuntime(errorMessages.get(0));
+    // private void verificarCursoValido(Curso curso) {
+    //     // Check Curso
+    //     if (curso == null) throw new RegraNegocioRuntime(errorMessages.get(0));
 
-        // Check Nome 
-        if (curso.getNome() == null)
-            throw new RegraNegocioRuntime(errorMessages.get(1));
-        else if (curso.getNome().strip().isEmpty())
-            throw new RegraNegocioRuntime(errorMessages.get(2));
+    //     // Check Nome 
+    //     if (curso.getNome() == null)
+    //         throw new RegraNegocioRuntime(errorMessages.get(1));
+    //     else if (curso.getNome().strip().isEmpty())
+    //         throw new RegraNegocioRuntime(errorMessages.get(2));
     
-    }
+    // }
 
     private void verificarCursoExistePorId(Long id) {
         // Check ID
@@ -70,54 +70,57 @@ public class CursoService {
         else if (cursoRepository.existsById(id))
             throw new RegraNegocioRuntime(errorMessages.get(7));
     }
-    private void verificarCursoNaoExistePorId(Long id) {
-        // Check ID
-        if (id != null) {
-            if (cursoRepository.existsById(id))
-                throw new RegraNegocioRuntime(errorMessages.get(3));
-            else
-                throw new RegraNegocioRuntime(errorMessages.get(4));
-        }
-    }
+    // private void verificarCursoNaoExistePorId(Long id) {
+    //     // Check ID
+    //     if (id != null) {
+    //         if (cursoRepository.existsById(id))
+    //             throw new RegraNegocioRuntime(errorMessages.get(3));
+    //         else
+    //             throw new RegraNegocioRuntime(errorMessages.get(4));
+    //     }
+    // }
     
-    private Curso salvar(Curso curso) {
-        verificarCursoValido(curso);
-        return cursoRepository.save(curso); 
-    }
+    // private Curso salvar(Curso curso) {
+    //     verificarCursoValido(curso);
+    //     return cursoRepository.save(curso); 
+    // }
 
-    public Curso inserir(Curso curso) {
-        if (curso == null) throw new RegraNegocioRuntime(errorMessages.get(0));
-        verificarCursoNaoExistePorId(curso.getId());
-        return salvar(curso); 
-    }
+    // public Curso inserir(Curso curso) {
+    //     if (curso == null) throw new RegraNegocioRuntime(errorMessages.get(0));
+    //     verificarCursoNaoExistePorId(curso.getId());
+    //     return salvar(curso); 
+    // }
 
-    public Curso editar(Curso curso) {
-        if (curso == null) throw new RegraNegocioRuntime(errorMessages.get(0));
-        verificarCursoExistePorId(curso.getId());
-        return salvar(curso); 
-    }
+    // public Curso editar(Curso curso) {
+    //     if (curso == null) throw new RegraNegocioRuntime(errorMessages.get(0));
+    //     verificarCursoExistePorId(curso.getId());
+    //     return salvar(curso); 
+    // }
 
-    public void deletar(Curso curso) {
-        verificarCursoExistePorId(curso.getId());
-        cursoRepository.delete(curso);
-    }
-    public void deletar(Long id) {
-        verificarCursoExistePorId(id);
-        cursoRepository.deleteById(id);
-    }
-
-    /* 
-    public Curso consultarCursoDoEgresso(Egresso egresso) {
+    // public void deletar(Curso curso) {
+    //     verificarCursoExistePorId(curso.getId());
+    //     cursoRepository.delete(curso);
+    // }
+    // public void deletar(Long id) {
+    //     verificarCursoExistePorId(id);
+    //     cursoRepository.deleteById(id);
+    // }
+ 
+    public List<Curso> consultarCursosPorEgresso(Egresso egresso) {
         if (egresso == null)
-        throw new RegraNegocioRuntime(errorMessages.get(8));
+            throw new RegraNegocioRuntime(errorMessages.get(8));
         else if (egresso.getId() == null)
-        throw new RegraNegocioRuntime(errorMessages.get(9));
+            throw new RegraNegocioRuntime(errorMessages.get(9));
         else if (!egressoRepository.existsById(egresso.getId()))
-        throw new RegraNegocioRuntime(errorMessages.get(10));
-        //// Terminar protótipo
-        return null // deve retornar um objeto 'Curso' 
+            throw new RegraNegocioRuntime(errorMessages.get(10));
+        
+        List<CursoEgresso> relacoes = cursoEgressoRepository.findAllByEgresso(egresso);
+        List<Curso> cursos = new ArrayList<>();
+        for (CursoEgresso relacao : relacoes) {
+            cursos.add(relacao.getCurso());
+        }
+        return cursos; 
     }
-    */
 
     public List<Egresso> consultarEgressosPorCurso(Curso curso) {
         if (curso == null) throw new RegraNegocioRuntime(errorMessages.get(0));
