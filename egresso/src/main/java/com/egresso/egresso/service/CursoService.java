@@ -67,7 +67,7 @@ public class CursoService {
         // Check ID
         if (id == null)
             throw new RegraNegocioRuntime(errorMessages.get(6));
-        else if (cursoRepository.existsById(id))
+        else if (!cursoRepository.existsById(id))
             throw new RegraNegocioRuntime(errorMessages.get(7));
     }
     // private void verificarCursoNaoExistePorId(Long id) {
