@@ -32,7 +32,7 @@ public class CargoService {
         // ERR-MSG-02
         "O nome do cargo informado é vazio.",
         // ERR-MSG-03
-        "O cargo já possui ID que já consta no banco.",
+        "O cargo possui ID que já consta no banco.",
         // ERR-MSG-04
         "O cargo só deve possuir ID após inserção no banco.",
         // ERR-MSG-05
@@ -40,7 +40,13 @@ public class CargoService {
         // ERR-MSG-06
         "O ID do cargo informada é nulo.",
         // ERR-MSG-07
-        "Não foi encontrado egresso com o ID informado."
+        "Não foi encontrado cargo com o ID informado.",
+        // ERR-MSG-08
+        "O egresso informado não deve ser nulo.",
+        // ERR-MSG-09
+        "O egresso informado deve possuir ID.",
+        // ERR-MSG-10
+        "O egresso informado não consta no banco."
     );
     
     private void verificarCargoValido(Cargo cargo) {
@@ -61,8 +67,10 @@ public class CargoService {
 
         // Check Nome
         if (cargo.getNome() != null) {
-            if (cargoRepository.existsByNome(cargo.getNome()))
-                throw new RegraNegocioRuntime(errorMessages.get(5));
+            if (cargoRepository.existsByNome(cargo.getNome())) {
+                if (cargoRepository.findByNome(cargo.getNome()).get() != cargo)
+                    throw new RegraNegocioRuntime(errorMessages.get(5));
+            }
         } else {
             throw new RegraNegocioRuntime(errorMessages.get(1));
         }
@@ -71,7 +79,7 @@ public class CargoService {
         // Check ID
         if (id == null)
             throw new RegraNegocioRuntime(errorMessages.get(6));
-        else if (cargoRepository.existsById(id))
+        else if (!cargoRepository.existsById(id))
             throw new RegraNegocioRuntime(errorMessages.get(7));
     }
     private void verificarCargoNaoExistePorId(Long id) {
@@ -100,6 +108,7 @@ public class CargoService {
         return salvar(cargo); 
     }
     public void deletar(Cargo cargo) {
+        if (cargo == null) throw new RegraNegocioRuntime(errorMessages.get(0));
         verificarCargoExistePorId(cargo.getId());
         cargoRepository.delete(cargo);
     }
@@ -109,11 +118,11 @@ public class CargoService {
     }
     public List<Cargo> consultarCargosPorEgresso(Egresso egresso) {
         if (egresso == null)
-            throw new RegraNegocioRuntime(errorMessages.get(12));
+            throw new RegraNegocioRuntime(errorMessages.get(8));
         else if (egresso.getId() == null)
-            throw new RegraNegocioRuntime(errorMessages.get(13));
+            throw new RegraNegocioRuntime(errorMessages.get(9));
         else if (!egressoRepository.existsById(egresso.getId()))
-            throw new RegraNegocioRuntime(errorMessages.get(14));
+            throw new RegraNegocioRuntime(errorMessages.get(10));
         ArrayList<Cargo> cargos = new ArrayList<>();
         for (ProfEgresso relation : profEgressoRepository.findAllByEgresso(egresso)){
             cargos.add(relation.getCargo());

@@ -98,14 +98,16 @@ public class EgressoService {
         if (egresso.getEmail() == null) {
             throw new RegraNegocioRuntime(errorMessages.get(3));
         } else if (egressoRepository.existsByEmail(egresso.getEmail())) {
-            throw new RegraNegocioRuntime(errorMessages.get(4));
+            if (egressoRepository.findByEmail(egresso.getEmail()).get() != egresso)
+                throw new RegraNegocioRuntime(errorMessages.get(4));
         }
 
         // Check CPF
         if (egresso.getCpf() == null) {
             throw new RegraNegocioRuntime(errorMessages.get(5));
         } else if (egressoRepository.existsByCpf(egresso.getCpf())) {
-            throw new RegraNegocioRuntime(errorMessages.get(6));
+            if (egressoRepository.findByCpf(egresso.getCpf()).get() != egresso)
+                throw new RegraNegocioRuntime(errorMessages.get(6));
         }
 
         // Não é necessário checar Resumo, URL foto e Contatos
