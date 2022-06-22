@@ -6,6 +6,8 @@ import java.util.List;
 import javax.transaction.Transactional;
 import com.egresso.egresso.model.entities.Egresso;
 import com.egresso.egresso.model.entities.Curso;
+import com.egresso.egresso.model.entities.CursoEgresso;
+import com.egresso.egresso.model.repositories.CursoEgressoRepository;
 import com.egresso.egresso.model.repositories.CursoRepository;
 import com.egresso.egresso.model.repositories.EgressoRepository;
 import com.egresso.egresso.service.exceptions.RegraNegocioRuntime;
@@ -20,6 +22,8 @@ public class CursoService {
     CursoRepository cursoRepository;
     @Autowired
     EgressoRepository egressoRepository;
+    @Autowired
+    CursoEgressoRepository cursoEgressoRepository;
     
     public static List<String> errorMessages = List.of(
         // ERR-MSG-00
@@ -37,7 +41,7 @@ public class CursoService {
         // ERR-MSG-06
         "O ID do curso informada é nulo.",
         // ERR-MSG-07
-        "Não foi encontrado curso com o ID informado.",
+        "Não foi encontrado curso com o ID informado."//,
         // ERR-MSG-08
         //"O egresso informado é nulo.",
         // ERR-MSG-09
@@ -121,7 +125,7 @@ public class CursoService {
         verificarCursoExistePorId(curso.getId());
         
         ArrayList<Egresso> egressos = new ArrayList<>();
-        for (ProfEgresso relation : profEgressoRepository.findAllByCurso(curso)){
+        for (CursoEgresso relation : cursoEgressoRepository.findAllByCurso(curso)){
             egressos.add(relation.getEgresso());
         }
 
@@ -132,7 +136,7 @@ public class CursoService {
         if (curso != null){
             return consultarEgressosPorCurso(curso).size();
         }
-        else throw new RegraNegocioRuntime(errorMessages.get(0))
+        else throw new RegraNegocioRuntime(errorMessages.get(0));
     }
 
 }
